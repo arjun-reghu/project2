@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Entry Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+
+    .sidebar h3 {
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .logout {
+      margin-top: auto;
+      padding: 10px;
+      background-color: #ff4d4d;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .logout:hover {
+      background-color: #cc0000;
+    }
+
+    /* Main content */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .form-container {
+      max-width: 600px;
+      background-color: white;
+      padding: 30px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h3>Menu</h3>
+  <a href="home.html">Home</a>
+  <a href="new_entry.html">New Entry</a>
+  <a href="history.html">History</a>
+  <div class="logout" onclick="logout()">Logout</div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <div class="form-container">
+    <h2>New Entry</h2>
+    <form id="entryForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="regNo">Register No:</label>
+        <input type="number" id="regNo" name="regNo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="itemCount">Count of Items:</label>
+        <input type="number" id="itemCount" name="itemCount" required>
+      </div>
+
+      <div class="form-group">
+        <label for="itemName">Name of Item:</label>
+        <input type="text" id="itemName" name="itemName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="make">Make of Item:</label>
+        <input type="text" id="make" name="make" required>
+      </div>
+
+      <div class="form-group">
+        <label for="place">Place of Manufacture:</label>
+        <input type="text" id="place" name="place" required>
+      </div>
+
+      <div class="form-group">
+        <label for="imageA">Browse Image A:</label>
+        <input type="file" id="imageA" name="imageA" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="imageB">Browse Image B:</label>
+        <input type="file" id="imageB" name="imageB" accept="image/*" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function logout() {
+    alert("Logging out...");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
